@@ -36,6 +36,13 @@ var donutBox = {
 	taste: "fabulous"
 };
 
+for(var order in donutBox){
+	console.log(order)
+	console.log(donutBox[order]);
+	
+
+
+}
 
 
 /*2.  Create a function that will take in an object and loop through the properties of that object.
@@ -44,6 +51,15 @@ Console.log the values of the object. Use the donutBox object from the previous 
 /*@param {Object}
 @return {Object}*/
 
+function loop(obj){
+for(var prop in obj){
+
+console.log(obj[prop]);
+} return obj
+
+}
+loop(donutBox);
+
 
 
 /*3. Create a function that will take in an object and will delete the taste property from the donutBox object above.*/
@@ -51,7 +67,13 @@ Console.log the values of the object. Use the donutBox object from the previous 
 /*@param {Object}
 @return {Object}*/
 
+function noTaste(obj){
+delete donutBox.taste
+return obj
 
+}
+noTaste(donutBox);
+console.log(donutBox);
 
 /*4. Create a function that will take in an object and will return all the values of the object in an array.*/
 
@@ -66,6 +88,18 @@ var legend = {
 	hobbies: ["martial arts", "fitness", "dancing", "knitting", "coding"]
 };
 
+function toArray(obj){
+var whoIs = [];
+for(array in obj){
+
+whoIs.push(obj[array]);
+}
+
+return whoIs;
+
+}
+console.log(toArray(legend));
+
 
 /*5. Create a function that will take in an object and will return the number of properties (key -value pairs) in the object. Use the legend object above.
 
@@ -76,7 +110,21 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects
 /*@param {Object}
 @return {Number}*/
 
+function print(obj){
+	var howMany = 0
+for(prop in obj){
+if(obj.hasOwnProperty(prop)){
+	howMany++
 
+}
+
+
+}
+
+return howMany
+}
+
+console.log(print(legend));
 
 /*6. Create a function that will take in an object and check to see if the legend object has a property of 'occupation'.*/
 
@@ -84,5 +132,15 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects
 @return {Object}*/
 
 
+function check(obj){
+for(prop in obj){
+
+	if(obj.hasOwnProperty('occupation')){
+		return ("Bruce Lee");
+	}
+	else return ('phony')
+}
 
 
+}
+console.log(check(legend));
